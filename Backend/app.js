@@ -9,11 +9,12 @@ const app = express();
 dotenv.config({path:"./config/config.env"});
 
 app.use(cors({
-    origin: [process.env.Frontend_url],
+    //origin: [process.env.Frontend_url],
+    origin: "http://localhost:5173",
     methods: ["POST"],
     credentials: true
 
-}))
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
